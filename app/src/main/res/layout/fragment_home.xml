@@ -57,6 +57,7 @@
                     android:textSize="17dp" />
 
                 <TextView
+                    android:id="@+id/mojodi"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
@@ -78,6 +79,7 @@
                     android:textSize="17dp" />
 
                 <TextView
+                    android:id="@+id/hazineha"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
@@ -99,6 +101,7 @@
                     android:textSize="17dp" />
 
                 <TextView
+                    android:id="@+id/daramadha"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"

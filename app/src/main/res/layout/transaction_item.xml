@@ -30,12 +30,14 @@
             android:textSize="15sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/category"
+            android:text="@string/hesab"
             android:layout_toStartOf="@id/img"
             android:layout_below="@id/category"
             android:layout_marginEnd="20dp"/>
 
         <TextView
+            android:layout_centerInParent="true"
+            android:id="@+id/value"
             android:textSize="15sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
