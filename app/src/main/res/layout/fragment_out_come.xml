@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OutComeFragment">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:padding="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/ic_baseline_money"
+                    android:drawablePadding="10dp"
+                    android:hint="@string/amount"
+                    android:inputType="number"
+                    android:maxLength="7" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:paddingLeft="10dp"
+                    android:text="@string/toman"
+                    android:textColor="@color/black" />
+
+            </RelativeLayout>
+
+            <EditText
+                android:padding="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:drawableRight="@drawable/ic_baseline_category"
+                android:drawablePadding="10dp"
+                android:hint="@string/category"
+                android:inputType="textPersonName"
+                android:maxLength="15" />
+
+            <EditText
+                android:padding="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:drawableRight="@drawable/ic_baseline_wallet"
+                android:drawablePadding="10dp"
+                android:hint="@string/hesab"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:padding="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:drawableRight="@drawable/ic_baseline_date"
+                android:drawablePadding="10dp"
+                android:hint="@string/date"
+                android:maxLines="1" />
+
+            <EditText
+                android:padding="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:drawableRight="@drawable/ic_baseline_note"
+                android:drawablePadding="10dp"
+                android:hint="@string/description"
+                android:inputType="textMultiLine"
+                android:maxLength="30"
+                android:maxLines="2" />
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_hazine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/red"
+        android:text="@string/hazine"
+        android:textColor="@color/white" />
+
+</RelativeLayout>
