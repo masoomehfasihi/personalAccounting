@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">Personal Accounting</string>
-    <string name="username">username</string>
-    <string name="pass">pass</string>
-    <string name="login">login</string>
-    <string name="email">email</string>
-    <string name="create_account">ساختن حساب کاربری</string>
-    <string name="register">register</string>
+    <string name="app_name">حسابداری شخصی</string>
+    <string name="username">شناسه کاربری</string>
+    <string name="pass">رمز عبور</string>
+    <string name="login">ورود</string>
+    <string name="email">ایمیل</string>
+    <string name="create_account">ایجاد حساب کاربری</string>
+    <string name="register">ثبت نام</string>
 </resources>
