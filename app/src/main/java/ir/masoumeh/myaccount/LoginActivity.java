@@ -8,24 +8,24 @@ import android.view.View;
 
 import ir.masoumeh.myaccount.databinding.ActivityLoginBinding;
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
+public class LoginActivity extends AppCompatActivity {
     ActivityLoginBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_login);
-        ActivityLoginBinding.inflate(getLayoutInflater());
-        binding.register.setOnClickListener(this);
+        binding =ActivityLoginBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
+        binding.register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
-    @Override
-    public void onClick(View v) {
-    switch (v.getId()){
-        case R.id.register:
-            Intent intent = new Intent(LoginActivity.this , RegisterActivity.class);
-            startActivity(intent);
-//        case R.id.login :
 
-    }
-    }
 }
