@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "658608497449",
+    "project_id": "personalaccounting-91a59",
+    "storage_bucket": "personalaccounting-91a59.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:658608497449:android:ec3c9cac950ae8adb2cd38",
+        "android_client_info": {
+          "package_name": "ir.masoumeh.myaccount"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "658608497449-u5ooim4pfk6fiki2soiuppnamlj0cq2r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDk-AESt8ZLOmoUaKbyYz4p3GwJS92TNCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "658608497449-u5ooim4pfk6fiki2soiuppnamlj0cq2r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
