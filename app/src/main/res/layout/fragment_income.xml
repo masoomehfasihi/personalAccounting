@@ -21,6 +21,8 @@
                 android:layout_height="wrap_content">
 
                 <EditText
+                    android:gravity="right"
+                    android:id="@+id/edt_amount"
                     android:padding="15dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -42,6 +44,7 @@
             </RelativeLayout>
 
             <EditText
+                android:id="@+id/edt_category"
                 android:padding="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -59,10 +62,12 @@
                 android:layout_margin="5dp"
                 android:drawableRight="@drawable/ic_baseline_wallet"
                 android:drawablePadding="10dp"
-                android:hint="@string/hesab"
+                android:enabled="false"
+                android:text="@string/hesab"
                 android:inputType="textPersonName" />
 
             <EditText
+                android:id="@+id/edt_date"
                 android:padding="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -73,6 +78,7 @@
                 android:maxLines="1" />
 
             <EditText
+                android:id="@+id/edt_description"
                 android:padding="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -90,7 +96,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_hazine"
+        android:id="@+id/btn_daramad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

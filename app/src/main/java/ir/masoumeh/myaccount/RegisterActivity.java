@@ -64,7 +64,6 @@ public class RegisterActivity extends AppCompatActivity {
                                 Toast.makeText(RegisterActivity.this, "some errors", Toast.LENGTH_SHORT).show();
                             }
                         }
-
                     });
         } else {
             if (email.isEmpty()) {
@@ -79,7 +78,6 @@ public class RegisterActivity extends AppCompatActivity {
                 binding.edtUser.setError("شناسه کاربری را وارد کنید");
 
             }
-
             if (pass.length() < 6) {
                 binding.edtPass.setError("طول رمز عبور باید حداقل 6 رقم باشد");
 

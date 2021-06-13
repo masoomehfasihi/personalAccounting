@@ -21,14 +21,15 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:padding="15dp"
+                    android:id="@+id/edt_amount"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableRight="@drawable/ic_baseline_money"
                     android:drawablePadding="10dp"
                     android:hint="@string/amount"
                     android:inputType="number"
-                    android:maxLength="7" />
+                    android:maxLength="7"
+                    android:padding="15dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -42,7 +43,7 @@
             </RelativeLayout>
 
             <EditText
-                android:padding="15dp"
+                android:id="@+id/edt_category"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -50,30 +51,33 @@
                 android:drawablePadding="10dp"
                 android:hint="@string/category"
                 android:inputType="textPersonName"
-                android:maxLength="15" />
+                android:maxLength="15"
+                android:padding="15dp" />
 
             <EditText
-                android:padding="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:drawableRight="@drawable/ic_baseline_wallet"
                 android:drawablePadding="10dp"
-                android:hint="@string/hesab"
-                android:inputType="textPersonName" />
+                android:enabled="false"
+                android:inputType="textPersonName"
+                android:padding="15dp"
+                android:text="@string/hesab" />
 
             <EditText
-                android:padding="15dp"
+                android:id="@+id/edt_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:drawableRight="@drawable/ic_baseline_date"
                 android:drawablePadding="10dp"
                 android:hint="@string/date"
-                android:maxLines="1" />
+                android:maxLines="1"
+                android:padding="15dp" />
 
             <EditText
-                android:padding="15dp"
+                android:id="@+id/edt_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -82,7 +86,8 @@
                 android:hint="@string/description"
                 android:inputType="textMultiLine"
                 android:maxLength="30"
-                android:maxLines="2" />
+                android:maxLines="2"
+                android:padding="15dp" />
 
 
         </LinearLayout>
