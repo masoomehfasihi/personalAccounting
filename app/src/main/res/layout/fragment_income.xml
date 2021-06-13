@@ -67,6 +67,7 @@
                 android:inputType="textPersonName" />
 
             <EditText
+                android:editable="false"
                 android:id="@+id/edt_date"
                 android:padding="15dp"
                 android:layout_width="match_parent"

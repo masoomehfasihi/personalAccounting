@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -28,6 +29,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(view);
         adapterFragment= new Adapter(getSupportFragmentManager());
         setupViewPager(binding.viewpager);
+        binding.txtUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this , SettingActivity.class);
+                startActivity(intent);
+            }
+        });
         binding.txtUser.setText(UserInfo.getEmail(this) +" خوش آمدید ");
     }
 

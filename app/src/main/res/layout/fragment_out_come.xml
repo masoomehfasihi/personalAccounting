@@ -28,6 +28,7 @@
                     android:drawablePadding="10dp"
                     android:hint="@string/amount"
                     android:inputType="number"
+                    android:gravity="right"
                     android:maxLength="7"
                     android:padding="15dp" />
 
@@ -66,6 +67,7 @@
                 android:text="@string/hesab" />
 
             <EditText
+                android:editable="false"
                 android:id="@+id/edt_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

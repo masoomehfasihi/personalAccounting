@@ -1,5 +1,7 @@
 package ir.masoumeh.myaccount;
 
+import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -8,19 +10,26 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.google.firebase.database.annotations.NotNull;
+
 import java.util.Observer;
 
+import ir.hamsaa.persiandatepicker.PersianDatePickerDialog;
+import ir.hamsaa.persiandatepicker.api.PersianPickerDate;
+import ir.hamsaa.persiandatepicker.api.PersianPickerListener;
+import ir.hamsaa.persiandatepicker.util.PersianCalendarUtils;
 import ir.masoumeh.myaccount.databinding.FragmentIncomeBinding;
 
 public class IncomeFragment extends Fragment {
     FragmentIncomeBinding binding;
     TransactionViewModel viewModel;
-
+    PersianDatePickerDialog picker;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -41,6 +50,36 @@ public class IncomeFragment extends Fragment {
                 clearFields();
             } else {
                 Toast.makeText(requireContext(), "درآمد ثبت نشد" + it.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        });
+
+        binding.edtDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                picker = new PersianDatePickerDialog(requireContext())
+                        .setPositiveButtonString("باشه")
+                        .setNegativeButton("بیخیال")
+                        .setTodayButton("امروز")
+                        .setTodayButtonVisible(true)
+                        .setMinYear(1400)
+                        .setMaxYear(PersianDatePickerDialog.THIS_YEAR)
+                        .setInitDate(1400, 3, 20)
+                        .setActionTextColor(Color.GRAY)
+                        .setTitleType(PersianDatePickerDialog.WEEKDAY_DAY_MONTH_YEAR)
+                        .setShowInBottomSheet(true)
+                        .setListener(new PersianPickerListener() {
+                            @Override
+                            public void onDateSelected(@NotNull PersianPickerDate persianPickerDate) {
+                                binding.edtDate.setText(persianPickerDate.getPersianYear() + "/" + persianPickerDate.getPersianMonth() + "/" + persianPickerDate.getPersianDay());
+                            }
+
+                            @Override
+                            public void onDismissed() {
+
+                            }
+                        });
+
+                picker.show();
             }
         });
 
