@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Toast;
 
@@ -36,32 +37,53 @@ public class RegisterActivity extends AppCompatActivity {
         String email = binding.edtEmail.getText().toString();
         String pass = binding.edtPass.getText().toString();
         String user = binding.edtUser.getText().toString();
-        mAuth.createUserWithEmailAndPassword(email, pass)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            User userData = new User(user, email);
-                            FirebaseDatabase.getInstance().getReference("Users")
-                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                    .setValue(userData).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    if (task.isSuccessful()) {
-                                        UserInfo.saveEmail(RegisterActivity.this, email);
-                                        UserInfo.saveBoolPreference(RegisterActivity.this, "isLogin",true);
-                                        Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
-                                        startActivity(intent);
-                                    } else {
-                                        Toast.makeText(RegisterActivity.this, "failed", Toast.LENGTH_SHORT).show();
+        if (!email.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches() && pass.length() >= 6 && !user.isEmpty()) {
+            mAuth.createUserWithEmailAndPassword(email, pass)
+                    .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                User userData = new User(user, email);
+                                FirebaseDatabase.getInstance().getReference("Users")
+                                        .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                        .setValue(userData).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if (task.isSuccessful()) {
+                                            UserInfo.saveEmail(RegisterActivity.this, email);
+                                            UserInfo.saveBoolPreference(RegisterActivity.this, "isLogin", true);
+                                            Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+                                            startActivity(intent);
+                                            finish();
+                                        } else {
+                                            Toast.makeText(RegisterActivity.this, "failed", Toast.LENGTH_SHORT).show();
+                                        }
                                     }
-                                }
-                            });
-                        } else {
-                            Toast.makeText(RegisterActivity.this, "some errors", Toast.LENGTH_SHORT).show();
+                                });
+                            } else {
+                                Toast.makeText(RegisterActivity.this, "some errors", Toast.LENGTH_SHORT).show();
+                            }
                         }
-                    }
 
-                });
+                    });
+        } else {
+            if (email.isEmpty()) {
+                binding.edtEmail.setError("ایمیل را وارد کنید");
+
+            }
+            if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                binding.edtEmail.setError("لطفا ایمیل را صحیح وارد کنید");
+
+            }
+            if (user.isEmpty()) {
+                binding.edtUser.setError("شناسه کاربری را وارد کنید");
+
+            }
+
+            if (pass.length() < 6) {
+                binding.edtPass.setError("طول رمز عبور باید حداقل 6 رقم باشد");
+
+            }
+        }
     }
 }

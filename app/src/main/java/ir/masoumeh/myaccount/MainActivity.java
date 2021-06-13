@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(view);
         adapterFragment= new Adapter(getSupportFragmentManager());
         setupViewPager(binding.viewpager);
+        binding.txtUser.setText(UserInfo.getEmail(this) +" خوش آمدید ");
     }
 
     private void setupViewPager(ViewPager viewPager) {
@@ -41,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
         binding.tabs.setupWithViewPager(viewPager);
 
     }
-
 
     static class Adapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragments = new ArrayList<>();

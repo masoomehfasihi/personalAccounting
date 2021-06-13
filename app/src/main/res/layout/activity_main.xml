@@ -7,6 +7,19 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="30dp"
+        android:paddingVertical="15dp"
+        android:background="#673AB7"
+        android:text="کاربر عزیز خوش آمدید"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:gravity="right"
+        android:id="@+id/txt_user"/>
+
+
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabs"
         android:layout_width="match_parent"
